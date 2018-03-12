@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    body {
+        background-image: url(images/pic3.jpg);
+        -moz-background-size: 100%; /* Firefox 3.6+ */
+        -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+        -o-background-size: 100%; /* Opera 9.6+ */
+        background-size: 100%; /* Современные браузеры */
+        margin-top: -40px;
+
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+    }
+
+    form {
+        margin-top: -20px;
+        width: 250px;
+        padding: 25px 8px;;
+        margin-left: 70px;
+        /* margin: 150px auto; - по центру*/
+    }
+
+    form input {
+        width: 210px;
+        border: 1px solid;
+        border-bottom-color: rgba(255, 255, 255, .5);
+        border-right-color: rgba(60, 60, 60, .35);
+        border-top-color: rgba(60, 60, 60, .35);
+        border-left-color: rgba(80, 80, 80, .45);
+        background-color: rgba(0, 0, 0, .2);
+        padding: 8px 25px 8px 10px;
+        font: bold .875em/1.25em "Open Sans Condensed", sans-serif;
+        margin-bottom: 20px;
+    }
+
+    button {
+        margin-top: 15px;
+        font-size: 20px;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: .6em 2em;
+        outline: none;
+        border-width: 2px 0;
+        border-style: solid none;
+        border-color: #FDBE33 #000 #D77206;
+        border-radius: 4px;
+        background: linear-gradient(#F3AE0F, #E38916) #E38916;
+        transition: 0.2s;
+        /* margin: 51px; */
+        /* width:60% */
+    }
+</style>
+
+<style>
+    h2{font-size:64px;
+        margin-bottom: 20px;
+        color:#F90;
+        text-shadow:#191919 5px 5px 4px;
+    }
+</style>
+
+
+<form name="Input">
+    <div class="d15"><h2>Регистрация</h2></div>
+
+    Логин: <input type='text' id='login'>
+    Пароль: <input type="password" id="password1"/>
+    Подтверждение пароля:<input type="password" id="password2"/>
+
+    <button type="submit" class="button">
+        <a class="button"> Готово</a>
+    </button>
+</form>
+
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("password1").onchange = validatePassword;
+        document.getElementById("password2").onchange = validatePassword;
+    }
+    function validatePassword(){
+        var pass2=document.getElementById("password2").value;
+        var pass1=document.getElementById("password1").value;
+        if(pass1!=pass2)
+            document.getElementById("password2").setCustomValidity("Пароли не совпадают");
+        else
+            document.getElementById("password2").setCustomValidity('');
+    }
+</script>
+
+</body>
+</html>
